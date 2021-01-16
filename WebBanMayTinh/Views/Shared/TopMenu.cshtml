@@ -1,0 +1,13 @@
+﻿@model List<WebBanMayTinh.EF.ProductCategory>
+
+<div class="header-nav">
+    <nav>
+        @foreach (var item in Model)
+        {
+            var url = "/san-pham/" + item.MetaTitle + "-" + item.ID;
+            <a href="@url">
+                <img class="ico" width="24px" height="20px" style="padding-right: 2px" src="@item.Icon"><b>@item.Name</b>
+            </a>
+        }
+    </nav>
+</div>

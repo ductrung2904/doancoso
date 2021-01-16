@@ -1,0 +1,33 @@
+﻿@model List<WebBanMayTinh.Models.ProductModel>
+
+<ul class="homeproduct hot-item  ">
+    @foreach (var item in Model)
+    {
+        var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+        <li>
+            <a href="@url" class="" vertion2020 large" data-s="0">
+                <img width="180" height="180"
+                     src="@item.Images"
+                     class="lazy" alt="" />
+
+                <h3>@item.Name</h3>
+                <div class="props">
+                </div>
+
+
+                <div class="price">
+                    <strong>@(item.Price.HasValue ? item.Price.Value.ToString("N0") + "đ" : "Liên hệ")</strong>
+                </div>
+                <div class="ratingresult">
+                    <i class="icon-ystar"></i>
+                    <i class="icon-ystar"></i>
+                    <i class="icon-ystar"></i>
+                    <i class="icon-ystar"></i>
+                    <i class="icon-gstar"></i>
+                    <span>141 đánh giá</span>
+                </div>
+            </a>
+        </li>
+    }
+</ul>
+

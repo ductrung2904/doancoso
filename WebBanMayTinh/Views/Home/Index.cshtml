@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var listHotProduct = (List<WebBanMayTinh.EF.Product>)ViewBag.HotProduct;
+}
+
+<section>
+
+    @Html.Partial("_PartialSlide")
+
+    <div class="clr"></div>
+    <div class="promotebanner b1">
+        <a aria-label='slide' href="#">
+            <img style="cursor:pointer" src="https://cdn.tgdd.vn/2020/08/banner/laptop-chung-1200-75-1200x75.png"
+                 alt="laptop" width="1200" height="75">
+        </a>
+    </div>
+
+    <!-- Sản phẩm bán chạy -->
+    <div class="">
+        <div id="owl-promo" class="owl-carousel homepromo hot-item weekend">
+            @foreach (var item in listHotProduct)
+            {
+                var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+                <div class="item" data-index="1">
+                    <a href="@url" class="" vertion2020 large" data-s="0">
+
+                        <img width="180" height="180"
+                             src="@item.Images"
+                             class="lazy" alt="iPhone 12 Pro Max 128GB" />
+
+                        <h3>@item.Name</h3>
+                        <div class="price">
+                            <strong>@(item.Price.HasValue ? item.Price.Value.ToString("N0") + "đ" : "Liên hệ")</strong>
+                        </div>
+                        <div class="ratingresult">
+                            <i class="icon-ystar"></i>
+                            <i class="icon-ystar"></i>
+                            <i class="icon-ystar"></i>
+                            <i class="icon-ystar"></i>
+                            <i class="icon-gstar"></i>
+                            <span>209 đánh giá</span>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Laptop -->
+    <div class="navigat cate42">
+        <h2>Laptop nổi bật nhất</h2>
+        <div class="viewallcat">
+            <a href="">Apple</a>
+            <a href="">Acer</a>
+            <a href="">ASUS</a>
+            <a href="">Dell</a>
+            <a href="">HP</a>
+            <a href="">Lenovo</a>
+            <a href="">LG</a>
+            <a href="">MSI</a>
+            <a href="/laptop" class="laptop">Xem tất cả laptop</a>
+        </div>
+    </div>
+    @{Html.RenderAction("NewLaptop", "Product"); }
+
+    <!-- PC -->
+    <div class="navigat cate44">
+        <h2>PC nổi bật nhất</h2>
+        <div class="viewallcat">
+            <a href="">Apple</a>
+            <a href="">Acer</a>
+            <a href="">ASUS</a>
+            <a href="">Dell</a>
+            <a href="">HP</a>
+            <a href="">Lenovo</a>
+            <a href="">LG</a>
+            <a href="">MSI</a>
+            <a href="/pc" class="pc">Xem tất cả PC</a>
+        </div>
+    </div>
+    @{Html.RenderAction("NewPC", "Product"); }
+
+
+    <!-- Chuot -->
+    <div class="navigat acc1">
+        <h2>Chuột</h2>
+        <div class="viewallcat">
+            <a href="/chuot" class="chuot">Xem tất cả chuột</a>
+        </div>
+    </div>
+    @{Html.RenderAction("NewChuot", "Product"); }
+
+    <!--Ban phim-->
+    <div class="navigat geniusAcc">
+        <h2>Bàn phím</h2>
+        <div class="viewallcat">
+            <a href="/ban-phim" class="ban-phim">Xem tất cả bàn phím</a>
+        </div>
+    </div>
+    @{Html.RenderAction("NewBanPhim", "Product"); }
+    
+    <!--Tai nghe-->
+    <div class="navigat cateWatch cate7077">
+        <h2>Tai nghe</h2>
+        <div class="viewallcat">
+            <a href="/tainghe" class="taighe">Xem tất cả tai nghe</a>
+        </div>
+    </div>
+    @{Html.RenderAction("NewTaiNghe", "Product"); }
+    
+</section>

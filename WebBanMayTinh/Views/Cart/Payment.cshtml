@@ -1,0 +1,80 @@
+﻿@model List<WebBanMayTinh.Models.CartItem>
+@{
+    ViewBag.Title = "Thanh toán";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="main-page">
+    <div class="payment-table">
+        <h1 class="h1">Giỏ hàng</h1>
+        @if (Model.Count > 0)
+        {
+            <div class="cart-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>Tên sản phẩm</td>
+                            <td>Giá</td>
+                            <td>Số lượng</td>
+                            <td>Tổng cộng</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            decimal total = 0;
+                        }
+                        @foreach (var item in Model)
+                        {
+                            total = total + (item.Product.Price.GetValueOrDefault(0) * item.Quantity);
+                            <tr>
+                                <td><img src="@item.Product.Images" width="100" height="100" /></td>
+                                <td><a href="/chi-tiet/@item.Product.MetaTitle-@item.Product.ID">@item.Product.Name</a></td>
+                                <td>@item.Product.Price.GetValueOrDefault(0).ToString("N0")</td>
+                                <td><input type="number" name="textfield" id="textfield" data-id="@item.Product.ID" value="@item.Quantity" min="1" max="5" class="txtQuantity"></td>
+                                <td>@((item.Product.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0"))</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="cart-total">
+                <table class="table cart-table-total">
+                    <tbody>
+                        <tr>
+                            <th class="alignright">Thành tiền:</th>
+                            <th class="total-money">@total.ToString("N0") VNĐ</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+         }
+    </div>
+    <div class="payment-form group">
+        <div class="col-md-6">
+            @using (Html.BeginForm("Payment", "Cart", FormMethod.Post))
+            {
+                <div class="form-group">
+                    <label>Người nhận</label>
+                    <input name="shipName" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label>Điện thoại</label>
+                    <input name="shipPhone" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label>Địa chỉ</label>
+                    <input name="shipAddress" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input name="shipEmail" class="form-control" required />
+                </div>
+                <button type="submit" class="payment-btn btn">Gửi đơn hàng</button>
+            }
+        </div>
+    </div>
+</section>
+

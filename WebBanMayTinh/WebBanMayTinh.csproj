@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{03DB5DDF-751E-4C41-A7FE-F5474E3D341C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebBanMayTinh</RootNamespace>
+    <AssemblyName>WebBanMayTinh</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Common\Decryptor.cs" />
+    <Compile Include="Common\Encryptor.cs" />
+    <Compile Include="Common\UserLogin.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="DAO\OrderDAO.cs" />
+    <Compile Include="DAO\OrderDetailDAO.cs" />
+    <Compile Include="DAO\ProductCategoryDAO.cs" />
+    <Compile Include="DAO\ProductDAO.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="EF\Content.cs" />
+    <Compile Include="EF\ContentCategory.cs" />
+    <Compile Include="EF\GroupUser.cs" />
+    <Compile Include="EF\Order.cs" />
+    <Compile Include="EF\OrderDetail.cs" />
+    <Compile Include="EF\Producer.cs" />
+    <Compile Include="EF\Product.cs" />
+    <Compile Include="EF\ProductCategory.cs" />
+    <Compile Include="EF\QLBanMayTinhDbContext.cs" />
+    <Compile Include="EF\User.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\ProductCategoryModel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\UserModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Client\js\jquery.easing.js" />
+    <Content Include="Assets\Client\js\jquery.jcarousel.min.js" />
+    <Content Include="Content\cart.css" />
+    <Content Include="Content\detail.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\header-footer.css" />
+    <Content Include="Content\home.min.css" />
+    <Content Include="Content\hot-item.css" />
+    <Content Include="Content\icon.css" />
+    <Content Include="Content\loginform.css" />
+    <Content Include="Content\owl-carousel.css" />
+    <Content Include="Content\payment.css" />
+    <Content Include="Content\product-category.css" />
+    <Content Include="Data\images\Carousel\slideshow_1.jpg" />
+    <Content Include="Data\images\Carousel\slideshow_2.jpg" />
+    <Content Include="Data\images\Carousel\slideshow_3.jpg" />
+    <Content Include="Data\images\Carousel\slideshow_4.jpg" />
+    <Content Include="Data\images\Carousel\slideshow_5.jpg" />
+    <Content Include="Data\images\Icon\razer-logo.png" />
+    <Content Include="Data\images\NhomSanPham\ban-phim-1-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\ban-phim-1-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\ban-phim-1-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\ban-phim-2-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\ban-phim-2-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\ban-phim-2-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\ban-phim-3-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\ban-phim-3-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\ban-phim-3-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\ban-phim-4-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\ban-phim-4-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\ban-phim-4-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-1-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-1-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-1-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-2-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-2-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-2-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-3-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-3-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-3-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-4-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-4-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-4-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-5-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-5-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-5-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-6-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\chuot-6-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-1-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-1-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-1-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-1-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-10-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-10-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-10-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-10-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-11-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-11-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-11-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-11-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-12-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-12-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-12-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-12-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-13-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-13-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-13-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-13-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-14-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-14-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-14-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-14-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-15-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-15-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-15-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-15-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-16-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-16-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-16-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-16-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-17-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-17-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-17-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-17-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-18-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-18-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-18-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-18-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-19-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-19-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-19-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-19-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-2-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-2-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-2-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-2-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-20-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-20-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-20-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-20-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-21-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-21-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-21-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-21-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-22-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-22-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-22-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-22-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-23-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-23-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-23-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-23-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-24-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-24-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-24-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-24-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-25-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-25-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-25-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-25-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-26-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-26-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-26-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-26-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-27-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-27-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-27-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-27-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-28-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-28-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-28-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-28-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-3-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-3-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-3-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-3-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-4-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-4-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-4-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-4-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-5-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-5-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-5-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-5-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-6-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-6-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-6-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-6-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-7-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-7-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-7-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-7-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-8-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-8-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-8-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-8-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-9-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-9-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-9-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\laptop-9-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-1-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-1-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-1-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-1-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-10-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-10-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-10-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-11-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-11-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-11-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-12-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-12-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-12-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-13-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-13-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-13-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-2-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-2-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-2-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-3-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-3-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-3-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-4-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-4-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-4-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-5-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-5-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-5-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-6-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-6-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-6-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-7-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-7-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-7-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-8-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-8-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-8-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-9-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-9-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\pc-9-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-1-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-1-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-1-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-1-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-2-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-2-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-2-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-2-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-3-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-3-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-3-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-3-item_4.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-4-item_1.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-4-item_2.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-4-item_3.jpg" />
+    <Content Include="Data\images\NhomSanPham\tai-nghe-4-item_4.jpg" />
+    <Content Include="Data\images\SanPham\ban-phim-1.jpg" />
+    <Content Include="Data\images\SanPham\ban-phim-2.jpg" />
+    <Content Include="Data\images\SanPham\ban-phim-3.jpg" />
+    <Content Include="Data\images\SanPham\ban-phim-4.jpg" />
+    <Content Include="Data\images\SanPham\chuot-1.jpg" />
+    <Content Include="Data\images\SanPham\chuot-2.jpg" />
+    <Content Include="Data\images\SanPham\chuot-3.jpg" />
+    <Content Include="Data\images\SanPham\chuot-4.jpg" />
+    <Content Include="Data\images\SanPham\chuot-5.jpg" />
+    <Content Include="Data\images\SanPham\chuot-6.jpg" />
+    <Content Include="Data\images\SanPham\laptop-1.jpg" />
+    <Content Include="Data\images\SanPham\laptop-10.jpg" />
+    <Content Include="Data\images\SanPham\laptop-11.jpg" />
+    <Content Include="Data\images\SanPham\laptop-12.jpg" />
+    <Content Include="Data\images\SanPham\laptop-13.jpg" />
+    <Content Include="Data\images\SanPham\laptop-14.jpg" />
+    <Content Include="Data\images\SanPham\laptop-15.jpg" />
+    <Content Include="Data\images\SanPham\laptop-16.jpg" />
+    <Content Include="Data\images\SanPham\laptop-17.jpg" />
+    <Content Include="Data\images\SanPham\laptop-18.jpg" />
+    <Content Include="Data\images\SanPham\laptop-19.jpg" />
+    <Content Include="Data\images\SanPham\laptop-2.jpg" />
+    <Content Include="Data\images\SanPham\laptop-20.jpg" />
+    <Content Include="Data\images\SanPham\laptop-21.jpg" />
+    <Content Include="Data\images\SanPham\laptop-22.jpg" />
+    <Content Include="Data\images\SanPham\laptop-23.jpg" />
+    <Content Include="Data\images\SanPham\laptop-24.jpg" />
+    <Content Include="Data\images\SanPham\laptop-25.jpg" />
+    <Content Include="Data\images\SanPham\laptop-26.jpg" />
+    <Content Include="Data\images\SanPham\laptop-27.jpg" />
+    <Content Include="Data\images\SanPham\laptop-28.jpg" />
+    <Content Include="Data\images\SanPham\laptop-3.jpg" />
+    <Content Include="Data\images\SanPham\laptop-4.jpg" />
+    <Content Include="Data\images\SanPham\laptop-5.jpg" />
+    <Content Include="Data\images\SanPham\laptop-6.jpg" />
+    <Content Include="Data\images\SanPham\laptop-7.jpg" />
+    <Content Include="Data\images\SanPham\laptop-8.jpg" />
+    <Content Include="Data\images\SanPham\laptop-9.jpg" />
+    <Content Include="Data\images\SanPham\pc-1.jpg" />
+    <Content Include="Data\images\SanPham\pc-10.jpg" />
+    <Content Include="Data\images\SanPham\pc-11.jpg" />
+    <Content Include="Data\images\SanPham\pc-12.jpg" />
+    <Content Include="Data\images\SanPham\pc-13.jpg" />
+    <Content Include="Data\images\SanPham\pc-2.jpg" />
+    <Content Include="Data\images\SanPham\pc-3.jpg" />
+    <Content Include="Data\images\SanPham\pc-4.jpg" />
+    <Content Include="Data\images\SanPham\pc-5.jpg" />
+    <Content Include="Data\images\SanPham\pc-6.jpg" />
+    <Content Include="Data\images\SanPham\pc-7.jpg" />
+    <Content Include="Data\images\SanPham\pc-8.jpg" />
+    <Content Include="Data\images\SanPham\pc-9.jpg" />
+    <Content Include="Data\images\SanPham\tai-nghe-1.jpg" />
+    <Content Include="Data\images\SanPham\tai-nghe-2.jpg" />
+    <Content Include="Data\images\SanPham\tai-nghe-3.jpg" />
+    <Content Include="Data\images\SanPham\tai-nghe-4.jpg" />
+    <Content Include="Data\images\slide\gsct.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Client\js\CartController.js" />
+    <Content Include="Scripts\loginform.js" />
+    <Content Include="vendor\toastr\toastr.css" />
+    <Content Include="vendor\toastr\toastr.min.css" />
+    <Content Include="vendor\toastr\toastr.min.js" />
+    <Content Include="vendor\xzoom\xzoom.css" />
+    <Content Include="vendor\xzoom\xzoom.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="vendor\toastr\toastr.js.map" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_PartialFooter.cshtml" />
+    <Content Include="Views\Shared\_PartialSlide.cshtml" />
+    <Content Include="Views\Product\NewLaptop.cshtml" />
+    <Content Include="Views\Product\NewPC.cshtml" />
+    <Content Include="Views\Product\NewChuot.cshtml" />
+    <Content Include="Views\Product\NewBanPhim.cshtml" />
+    <Content Include="Views\Product\NewTaiNghe.cshtml" />
+    <Content Include="Views\Product\ProductDetail.cshtml" />
+    <Content Include="Views\Shared\TopMenu.cshtml" />
+    <Content Include="Views\Product\ProductCategory.cshtml" />
+    <Content Include="Views\Product\ProductRelated.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Views\Home\LoginAndRegister.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Search\_SearchFormPartial.cshtml" />
+    <Content Include="Views\Search\_CategoryListPartial.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\HeaderCart.cshtml" />
+    <Content Include="Views\Cart\Payment.cshtml" />
+    <Content Include="Views\Cart\Success.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60751</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60751/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

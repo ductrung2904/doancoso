@@ -1,0 +1,27 @@
+﻿<div class="header-main">
+    <a class="logo" title="Về trang chủ" href="/">
+        <i class="icontgdd-logo"></i>
+    </a>
+    <div>
+        @{Html.RenderAction("SearchForm", "Search"); }
+    </div>
+    <div class="menu-info">
+        @{Html.RenderAction("HeaderCart", "Cart"); }
+        <div>
+            @if (Session["UsernameMember"] == null)
+            {
+                <a href="/dang-nhap/" class="mn-new">ĐĂNG NHẬP</a>
+            }
+            else
+            {
+                <span>Xin chào @Session["UsernameMember"]</span>
+                <a href="/Home/Logout">Đăng xuất</a>
+            }
+            <a href="/tincongnghe" class="mn-faq">TIN CÔNG NGHỆ</a>
+        </div>
+    </div>
+</div>
+
+
+
+

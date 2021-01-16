@@ -1,0 +1,64 @@
+﻿@model List<WebBanMayTinh.Models.ProductModel>
+ 
+<ul class="homeproduct ">
+    <li class="feature" data-id="221251">
+        <a href="/laptop/acer-aspire-3-a315-nx-heesv-00d" class="vertion2020">
+            <img width="600" height="275"
+                 data-original="https://cdn.tgdd.vn/Products/Images/44/221251/Feature/acer-thang-10-720x333-2.jpg"
+                 class="lazy" alt="Acer Aspire 3 A315 54K 37B0 i3 8130U/4GB/256GB/Win10 (NX.HEESV.00D)" />
+            <div class="heightlabel">
+                <label class="installment">Trả góp <b>0%</b></label>
+            </div>
+            <h3>Acer Aspire 3 A315 54K 37B0 i3 8130U (NX.HEESV.00D)</h3>
+            <div class="props">
+                <span class="dotted  ">RAM 4GB</span>
+                <span class="dotted  ">Ổ cứng SSD 256GB</span>
+            </div>
+
+
+            <div class="price">
+                <strong>9.890.000₫</strong>
+                <span>10.990.000₫</span>
+                <i>-10%</i>
+            </div>
+            <div class="promo noimage">
+                <p>Quà <b>100.000₫</b></p>
+            </div>
+
+            <input class="spInfo" data-brand="Acer" data-cat="Laptop" data-code="0220042001158"
+                   data-price="10990000" data-version="" id="data221251" name="data221251" type="hidden"
+                   value="221251" />
+            <div class="clr"></div>
+        </a>
+    </li>
+    @foreach (var item in Model)
+    {
+        var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+        <li>
+            <a href="@url" class="" vertion2020 large" data-s="0">
+                <img width="180" height="180"
+                     src="@item.Images"
+                     class="lazy" alt="" />
+
+                <h3>@item.Name</h3>
+                <div class="props">
+                </div>
+
+
+                <div class="price">
+                    <strong>@(item.Price.HasValue ? item.Price.Value.ToString("N0") + "đ" : "Liên hệ")</strong>
+                </div>
+                <div class="ratingresult">
+                    <i class="icon-ystar"></i>
+                    <i class="icon-ystar"></i>
+                    <i class="icon-ystar"></i>
+                    <i class="icon-ystar"></i>
+                    <i class="icon-gstar"></i>
+                    <span>141 đánh giá</span>
+                </div>
+            </a>
+        </li>
+    }
+</ul>
+
+

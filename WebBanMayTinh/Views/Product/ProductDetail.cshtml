@@ -1,0 +1,204 @@
+﻿@model WebBanMayTinh.Models.ProductModel
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="detail">
+    <ul class="breadcrumb">
+        <li>
+            <a href="/Home">Trang chủ</a>
+            <span>›</span>
+        </li>
+        <li>
+            <a href="/san-pham/@Model.MetaTitle-@Model.CategoryID">@Model.ProductCategory</a>
+            <span>›</span>
+        </li>
+        <li>
+            <a href="/chi-tiet/@Model.MetaTitle-@Model.ID">@Model.Name</a>
+        </li>
+    </ul>
+
+    <div class="clr"></div>
+
+    <div class="rowdetail " id="normalproduct">
+        <aside class="picture">
+            <div class="icon-position">
+                <img id="product_images" width="400" height="400" src="@Model.Images">
+            </div>
+
+            <div class="product_more_images">
+                <div class="jcarousel-skin-previews">
+                    <div class="jcarousel-container jcarousel-container-horizontal">
+                        <div class="jcarousel-clip jcarousel-clip-horizontal">
+                            <ul class="jcarousel jcarousel-list jcarousel-list-horizontal" data-id="@Model.ID" style="overflow: hidden; position: relative; top: 0px; margin: 0px; padding: 0px; left: 0px; display: inline-flex;">
+                                @foreach (var item in ViewBag.listImages)
+                                {
+                                    <li class="jcarousel-item jcarousel-item-horizontal jcarousel-item jcarousel-item-horizontal">
+                                        <img class='product_images_gallery' src="@item">
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <aside class="price_sale">
+            <p class="product_name">@Model.Name</p>
+            <div class="area_price ">
+                <p class="producer">Thương hiệu<a class="producer_name" href="">@Model.Producer</a></p>
+                <hr>
+                <p>Thông số kỹ thuật:</p>
+                <p class="product_description">
+                    @Html.Raw(Model.Descriptions)
+                </p>
+                <hr>
+                <p class="quantity">Chỉ còn @Model.Quantity sản phẩm</p>
+                <strong>@(Model.Price.HasValue ? Model.Price.Value.ToString("N0") + "đ" : "Liên hệ")</strong>
+                <span></span>
+            </div>
+
+            <div class="area_order area_orderM">
+                <a id="tra-gop" class="buy_now" href="#"><b>Mua ngay</b></a>
+                <a class="add_cart" href="/them-gio-hang?productId=@Model.ID&quantity=1"><b>Thêm vào giỏ hàng</b></a>
+            </div>
+        </aside>
+        <div class="rightInfo ">
+            <div class="checkexist ">
+                <strong class="kthlbl"><i class="iconshop-local"></i>Kiểm tra c&#243; h&#224;ng tại nơi bạn ở kh&#244;ng? </strong>
+                <div class="clr"></div>
+            </div>
+
+            <ul class="policy ">
+                <li class="inpr">
+                    <span>
+                        Bộ sản phẩm gồm: <a class="stdImg">
+                            D&#226;y nguồn, S&#225;ch hướng dẫn, Th&#249;ng
+                            m&#225;y, Adapter sạc <i class='icondetail-camera standkit'
+                                                     href='//cdn.tgdd.vn/Products/Images/44/229622/Kit/dell-vostro-3491-i3-70223127-bbh-org.jpg'></i>
+                        </a>
+                    </span>
+                </li>
+                <li class="wrpr">
+                    <span>
+                        Bảo hành chính hãng 12 tháng.
+                    </span>
+                </li>
+                <li class="chpr">
+                    Lỗi là đổi mới trong 1 tháng tại hơn 2236 siêu thị toàn quốc
+                    <a href="javascript:openPopWrt();">Xem chi tiết</a>
+                </li>
+
+            </ul>
+
+            <div class="wrap_wrtp wrap_wrty hide">
+                <div class="pop">
+                    <div class="hdpop">
+                        CHÍNH SÁCH BẢO HÀNH, ĐỔI TRẢ <a href="javascript:closePopWrt();"
+                                                        class="closehd"><span>✖</span></a>
+                    </div>
+                    <div class="ctW">
+                        <div class="bh">
+                            <span class="tlt">BẢO HÀNH CHÍNH HÃNG</span>
+                            <span>
+                                Thân máy 12 tháng, pin 12 th&#225;ng, sạc 12 th&#225;ng
+                                <a class="pWarr" target="_blank" href="/bao-hanh/dell">Xem điểm bảo hành Dell</a>
+                            </span>
+                        </div>
+                        <div class="cs">
+                            <span class="tlt">
+                                CHÍNH SÁCH ĐỔI TRẢ
+                                <span class="nt">Chỉ cần số điện thoại mua hàng, không cần giấy tờ</span>
+                            </span>
+                            <h2>Lỗi do nhà sản xuất</h2>
+                            <div>
+                                <p><strong>Tháng 1</strong></p>
+                                <ul>
+                                    <li>
+                                        <strong>1 đổi 1 </strong>tại bất kì siêu thị Thế Giới Di Động, Điện máy XANH
+                                        toàn quốc. Nếu hết hàng đổi máy khác bù thêm tiền hoặc Thế Giới Di Động /
+                                        Điện máy XANH trả lại tiền chênh lệch.
+                                    </li>
+                                    <li>Hoặc trả máy thì nhận lại tiền 80% giá trị máy.</li>
+                                </ul>
+                                <p><strong>Tháng 2 - 12</strong></p>
+                                <ul>
+                                    <li>Thế Giới Di Động / Điện máy XANH chuyển hãng bảo hành.</li>
+                                    <li>
+                                        Hoặc trả máy thì nhận lại tiền 75% ở tháng thứ 2, 70% ở tháng thứ 3... (mỗi
+                                        tháng mất thêm 5%) giá trị máy
+                                    </li>
+                                </ul>
+                            </div>
+                            <h2>Sản phẩm không lỗi</h2>
+                            <div>
+                                <p><strong>Tháng 1​</strong></p>
+                                <ul>
+                                    <li>Trả máy thì nhận lại tiền 80% giá trị máy</li>
+                                </ul>
+                                <p><strong>Tháng 2 - 12</strong></p>
+                                <ul>
+                                    <li>
+                                        Trả máy thì nhận lại tiền 75% ở tháng thứ 2, 70% ở tháng thứ 3... (mỗi tháng
+                                        mất thêm 5%) giá trị máy
+                                    </li>
+                                </ul>
+                            </div>
+                            <h2>Sản phẩm lỗi do người dùng</h2>
+                            <div>
+                                <p>
+                                    <strong>Không bảo hành đổi trả</strong>. Thế Giới Di Động / Điện máy XANH hỗ trợ
+                                    chuyển hãng bảo hành, khách hàng chịu phí sửa chữa.
+                                </p>
+                            </div>
+                            <label class="xct">
+                                Xem đầy đủ: <a href="https://www.thegioididong.com/chinh-sach-bao-hanh-san-pham">
+                                Chính sách bảo
+                                hành đổi trả
+                                </a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+    @{Html.RenderAction("ProductRelated", "Product", new { id = Model.ID });}
+
+    <div class="clr"></div>
+    <div class="box_content">
+        <div class="content">
+            <div class="characteristics">
+                <h2>Đặc điểm nổi bật của @Model.Name</h2>
+            </div>
+
+            <div class="boxArticle">
+                <article class="area_article ">
+                   @Html.Raw(Model.Detail)
+                </article>
+            </div>
+            <div class="clr"></div>
+        </div>
+    </div>
+</section>
+
+@section Script
+{
+    <!--Sự kiện hover khi trỏ đến hình trong phần product_more_image-->
+    <script>
+            let cloudzoom_gallerys = document.getElementsByClassName('product_images_gallery')
+            let activeImages = document.getElementsByClassName('active')
+            for (var i = 0; i < cloudzoom_gallerys.length; i++) {
+                cloudzoom_gallerys[i].addEventListener('mouseover', function () {
+                    console.log(activeImages)
+                    this.classList.add('active')
+                    document.getElementById('product_images').src = this.src
+                })
+            }
+    </script>
+
+}

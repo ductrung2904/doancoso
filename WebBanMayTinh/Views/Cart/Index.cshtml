@@ -1,0 +1,73 @@
+﻿@model List<WebBanMayTinh.Models.CartItem>
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="main-page">
+    <div class="cart-item-table">
+        <h1 class="h1">Giỏ hàng</h1>
+        @if (Model.Count > 0)
+        {
+            <div class="cart-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>Tên sản phẩm</td>
+                            <td>Giá</td>
+                            <td>Số lượng</td>
+                            <td>Tổng cộng</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ 
+                            decimal total = 0;
+                        }
+                        @foreach (var item in Model)
+                        {
+                            total = total + (item.Product.Price.GetValueOrDefault(0) * item.Quantity);
+                            <tr>
+                                <td><img src="@item.Product.Images" width="100" height="100" /></td>
+                                <td><a href="/chi-tiet/@item.Product.MetaTitle-@item.Product.ID">@item.Product.Name</a></td>
+                                <td>@item.Product.Price.GetValueOrDefault(0).ToString("N0")</td>
+                                <td><input type="number" name="textfield" id="textfield" data-id="@item.Product.ID" value="@item.Quantity" min="1" max="5" class="txtQuantity"></td>
+                                <td>@((item.Product.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0"))</td>
+                                <td><a href="#" class="btnDelete" data-id="@item.Product.ID"><i class="delete_icon fa fa-trash-alt"></i></a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <button id="btnContinue" class="btn">Tiếp tục mua hàng</button>
+                <button id="btnUpdate" class="btn">Cập nhật giỏ hàng</button>
+                <button id="btnDeleteAll" class="btn">Xóa giỏ hàng</button>
+            </div>
+            <div class="cart-total">
+                <table class="table cart-table-total">
+                    <tbody>
+                        <tr>
+                            <th class="alignright">Thành tiền:</th>
+                            <th class="total-money">@total.ToString("N0") VNĐ</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="aligncenter">
+                    <p><button class="btn finaltotal-button"><a href="/thanh-toan/">Thanh toán</a></button></p>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="non-item">
+                <span class="alert alert-danger">Chưa có sản phẩm nào trong giỏ hàng</span>
+            </div>
+        }
+    </div>
+</section>
+
+@section Script 
+{
+    <script src="~/Assets/Client/js/CartController.js"></script>
+}

@@ -1,0 +1,66 @@
+﻿.cart-item-table {
+    margin-top: 70px;
+}
+
+.non-item {
+    padding-bottom: 300px;
+}
+
+.delete_icon {
+    font-size: 20px;
+}
+
+.cart-total {
+    width: 480px;
+    padding: 20px;
+    margin: 10px 0 0 800px;
+    position: relative;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.table .cart-table-total {
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.table .cart-table-total th {
+    padding: 0 15px;
+    border: none;
+}
+
+.alignright {
+    text-align: right;
+}
+
+.aligncenter {
+    text-align: center;
+}
+
+.total-money {
+    color: rgb(235, 33, 1);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.finaltotal-button {
+    width: 300px;
+    font-weight: bold;
+    background: rgb(20, 53, 195);
+    border-radius: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.finaltotal-button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.finaltotal-button:hover {
+    color: #fff;
+    background: #02007a;
+}

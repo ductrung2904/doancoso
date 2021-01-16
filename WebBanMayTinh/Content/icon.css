@@ -1,0 +1,48 @@
+[class^="icon-"] {
+  background-image: url(https://www.thegioididong.com/Content/desktop/images/V5/icondesktop20200728@1x.png?v=2);
+  background-repeat: no-repeat;
+  line-height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px 0 0;
+}
+
+.ratingresult {
+  padding: 0;
+  margin: 5px 0 0;
+}
+
+.ratingresult i {
+	margin: 0;
+}
+
+.icon-ystar {
+	background-position: -295px -30px;
+	width: 12px;
+	height: 12px;
+}
+
+.icon-gstar {
+	background-position: -310px -30px;
+	width: 12px;
+	height: 12px
+}
+
+.icon-hstar {
+	background-position: -423px -30px;
+	width: 12px;
+	height: 12px
+}
+
+.ratingresult span {
+	color: #777;
+	text-decoration: none;
+	position: relative;
+	top: 1px
+}
+
+.ico- {
+	width: 24px;
+	height: 20px;
+	padding-right: 2px;
+}

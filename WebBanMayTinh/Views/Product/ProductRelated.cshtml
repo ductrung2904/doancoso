@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WebBanMayTinh.Models.ProductModel>
+
+<div class="compare ">
+    <div class="tcpr">
+        <h4>So sánh với các sản phẩm tương tự</h4>
+    </div>
+</div>
+<div class="owl-carousel homepromo acc hot-item">
+    @foreach (var item in Model)
+    {
+        var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+
+        <div class="item">
+            <a href="@url" class="vertion2020 large">
+                <img src="@item.Images" class="lazy" />
+
+                <h3>@item.Name</h3>
+                <div class="price">
+                    <strong>@(item.Price.HasValue ? item.Price.Value.ToString("N0") + "đ" : "Liên hệ")</strong>
+                </div>
+                <div class="ratingresult">
+                    <i class="icon-ystar"></i>
+                    <i class="icon-ystar"></i>
+                    <i class="icon-ystar"></i>
+                    <i class="icon-gstar"></i>
+                    <i class="icon-gstar"></i>
+                    <span>141 đánh giá</span>
+                </div>
+            </a>
+        </div>
+    }
+</div>

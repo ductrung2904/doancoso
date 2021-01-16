@@ -1,0 +1,9 @@
+﻿@model List<WebBanMayTinh.Models.CartItem>
+@if (Model.Count > 0)
+{
+    <a href="/gio-hang/" class="a1 actmenu"><i class="icontgdd-cart">@Model.Count</i><span>Giỏ hàng</span></a>
+}
+else
+{
+    <a href="/gio-hang/" class="a1"><i class="icontgdd-cart"></i><span>Giỏ hàng</span></a>
+}

@@ -1240,17 +1240,6 @@ insert into Users values('maihuuvan', 'c8837b23ff8aaa8a2dde915473ce0991', N'Mai 
 insert into Users values('laquoclai', '54621b46c1664db5ba7127d8f22aff00', N'La Quốc Lai', 1, '2000-12-22', '0984683483', 'laquoclai@gmail.com', N'Bình Định', '30-08-2020', null, null, null, 1, 2)
 insert into Users values('ngsonvu', '00b7691d86d96aebd21dd9e138f90840', N'Nguyễn Sơn Vũ', 1, '2000-04-25', '0938920134', 'sonvu@gmail.com', N'Quận 1', '30-08-2020', null, null, null, 1, 2)
 
-insert into ContentCategory values(N'Đánh giá', 'danh-gia', '27-08-2020', 1)
-insert into ContentCategory values(N'Khuyến mãi', 'khuyen-mai', '27-08-2020', 1)
-insert into ContentCategory values(N'Sự kiện', 'su-kien', '27-08-2020', 1)
-
-insert into Content values(  
-'iPhone SE, iPhone 11 và iPhone XR - Những bước đi chiến lược tài tình nhất của thị trường di động trong nhiều năm trở lại', 
-'iphone-se-iphone-11-va-iphone-xr-nhung-buoc-di-chien-luoc-tai-tinh-nhat-cua-thi-truong-di-dong-trong-nhieu-nam-tro-lai', 
-'',
-'/Data/images/TinTuc/tin-tuc-1.jpg',
-'27-08-2020', 1, 2)
-
 select * from ProductCategory
 select * from Producer
 select * from Product

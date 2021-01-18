@@ -247,6 +247,7 @@
     <Content Include="Data\images\Carousel\slideshow_3.jpg" />
     <Content Include="Data\images\Carousel\slideshow_4.jpg" />
     <Content Include="Data\images\Carousel\slideshow_5.jpg" />
+    <Content Include="Data\images\Icon\logo.png" />
     <Content Include="Data\images\Icon\razer-logo.png" />
     <Content Include="Data\images\NhomSanPham\ban-phim-1-item_1.jpg" />
     <Content Include="Data\images\NhomSanPham\ban-phim-1-item_2.jpg" />
